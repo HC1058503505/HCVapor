@@ -4,6 +4,12 @@ import HTTP
 /// Here we have a controller that helps facilitate
 /// RESTful interactions with our Posts table
 final class PostController: ResourceRepresentable {
+    func sayHello(_ req: Request) throws -> ResponseRepresentable {
+        guard let name = req.data["name"] else {
+            throw Abort.badRequest
+        }
+        return "Hello, \(name)"
+    }
     /// When users call 'GET' on '/posts'
     /// it should return an index of all available posts
     func index(_ req: Request) throws -> ResponseRepresentable {
