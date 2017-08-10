@@ -43,6 +43,7 @@ extension Droplet {
         UserControllerSource.addRoutes(drop: self)
         try resource("user", UserControllerSource.self)
         
+        
         try resource("posts", PostController.self)
     }
 }
