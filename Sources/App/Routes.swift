@@ -1,9 +1,12 @@
 import Vapor
 import MySQLProvider
+import LeafProvider
 
 extension Droplet {
     func setupRoutes() throws {
-
+        get("/") { req in
+            return try self.view.make("index", ["name" : "houcong","description" : "Leaf"])
+        }
         get("hello") { req in
             var json = JSON()
             try json.set("hello", "world")
@@ -25,7 +28,7 @@ extension Droplet {
         get("mysql") { req in
             
             let mysql = try self.mysql()
-            let version = try mysql.raw("select * from person")
+            let version = try mysql.raw("select * from users")
             let json = JSON(node:version.wrapped)
             return json
         }
@@ -35,12 +38,10 @@ extension Droplet {
                 "version": "1.0"
                 ])
         }
-      
-        post("posts/register") { req in
-            return "post/Register"
-        }
-        let postVC = PostController()
-        get("name", handler: postVC.sayHello)
+    
+        
+        UserControllerSource.addRoutes(drop: self)
+        try resource("user", UserControllerSource.self)
         
         try resource("posts", PostController.self)
     }
