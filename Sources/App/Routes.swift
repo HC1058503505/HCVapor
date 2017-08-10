@@ -22,7 +22,7 @@ extension Droplet {
         get("info") { req in
             return req.description
         }
-
+        
         get("description") { req in return req.description }
         
         get("mysql") { req in
