@@ -1,0 +1,220 @@
+{
+    "Servers": [
+        {
+            "serverName": "北京服务器",
+            "serverAddress": "211.136.93.244",
+            "port": "21",
+            "userName": "cmdi",
+            "password": "cmdi.123",
+            "longitude":"116.443967",
+            "latitude":"39.936159"
+        },
+        {
+            "serverName": "甘肃服务器",
+            "serverAddress": "211.139.92.74",
+            "port": "21",
+            "userName": "ftptest",
+            "password": "GSwlb2014",
+            "longitude":"103.836528",
+            "latitude":"36.075895"
+        },
+	    {
+            "serverName": "河北服务器",
+            "serverAddress": "211.138.5.107",
+            "port": "21",
+            "userName": "hebei",
+            "password": "hebeitest123",
+            "longitude":"114.50426",
+            "latitude":"38.080322"
+        },
+	    {
+            "serverName": "河南服务器",
+            "serverAddress": "211.142.193.210",
+            "port": "21",
+            "userName": "henan",
+            "password": "henanftp",
+            "longitude":"113.622048",
+            "latitude":"34.781755"
+        },
+	       {
+            "serverName": "黑龙江服务器",
+            "serverAddress": "218.203.61.206",
+            "port": "21",
+            "userName": "heilongjiang",
+            "password": "heilongjiang123",
+            "longitude":"126.626097",
+            "latitude":"45.767189"
+        },
+        {
+            "serverName": "内蒙古服务器",
+            "serverAddress": "218.202.89.90",
+            "port": "21",
+            "userName": "neimenggu",
+            "password": "neimenggutest123",
+            "longitude":"111.685072",
+            "latitude":"40.883323"
+        },
+         {
+            "serverName": "天津服务器",
+            "serverAddress": "117.131.221.98",
+            "port": "21",
+            "userName": "tianjin",
+            "password": "tianjintest123",
+            "longitude":"117.192663",
+            "latitude":"39.134858"
+        },
+        {
+            "serverName": "浙江服务器",
+            "serverAddress": "218.205.48.242",
+            "port": "19221",
+            "userName": "zhejiang",
+            "password": "zhejiangtest123",
+            "longitude":"120.153835",
+            "latitude":"30.283697"
+        },
+        {
+            "serverName": "安徽服务器",
+            "serverAddress": "120.209.139.116",
+            "port": "21",
+            "userName": "anhui",
+            "password": "anhuitest123",
+            "longitude":"117.271197",
+            "latitude":"31.92204"
+        },
+	{
+            "serverName": "山西服务器",
+            "serverAddress": "183.203.35.21",
+            "port": "21",
+            "userName": "Smart_Test",
+            "password": "SmartTest_2014",
+            "longitude":"112.591944",
+            "latitude":"37.729444"
+        },
+	{
+            "serverName": "陕西服务器",
+            "serverAddress": "211.137.132.130",
+            "port": "21",
+            "userName": "GZCSTest",
+            "password": "Sxyd!123",
+            "longitude":"108.914774",
+            "latitude":"34.24417"
+        },
+		{
+            "serverName": "宁夏服务器",
+            "serverAddress": "218.203.100.234",
+            "port": "21",
+            "userName": "cmccnx",
+            "password": "Smarttest@123",
+            "longitude":"106.236694",
+            "latitude":"38.479347"
+        },
+	{
+            "serverName": "重庆服务器",
+            "serverAddress": "218.201.38.13",
+            "port": "21",
+            "userName": "chongqing",
+            "password": "Chongq@test1",
+            "longitude":"106.538109",
+            "latitude":"29.590345"
+	},
+	{
+            "serverName": "西藏服务器",
+            "serverAddress": "211.139.74.22",
+            "port": "21",
+            "userName": "ftptest",
+            "password": "Wy!(Ftp5#%",
+            "longitude":"91.087228",
+            "latitude":"29.648852"
+        },
+	{
+            "serverName": "吉林服务器",
+            "serverAddress": "111.26.20.135",
+            "port": "21",
+            "userName": "jilin",
+            "password": "JL@2014!",
+            "longitude":"125.38260",
+            "latitude":"43.8612"
+        },
+	{
+            "serverName": "湖南服务器",
+            "serverAddress": "111.8.16.236",
+            "port": "21",
+            "userName": "hunan",
+            "password": "HmccN!36",
+            "longitude":"113.043075",
+            "latitude":"28.162596"
+        },
+        {
+            "serverName": "广东服务器",
+            "serverAddress": "183.237.5.158",
+            "port": "21",
+            "userName": "guangdong",
+            "password": "Gd&2014",
+            "longitude":"113.351741",
+            "latitude":"23.146943"
+        },
+        {
+            "serverName": "新疆服务器",
+            "serverAddress": "117.145.177.184",
+            "port": "21",
+            "userName": "smartTest",
+            "password": "smartTest#1234",
+            "longitude": "87.563691666667",
+            "latitude": "43.8571"
+        },
+        {
+            "serverName": "青海服务器",
+            "serverAddress": "211.138.70.118",
+            "port": "21",
+            "userName": "qinghai",
+            "password": "Qh.smart#13yd",
+            "longitude":"101.782869",
+            "latitude":"36.648152"
+        },
+        {
+            "serverName": "海南服务器",
+            "serverAddress": "221.182.128.11",
+            "port": "21",
+            "userName": "ssmmaarrtt",
+            "password": "Touyongftp@xiaojianren2",
+            "longitude":"110.3238889",
+            "latitude":"20.0075"
+        },
+		{
+            "serverName": "上海服务器",
+            "serverAddress": "211.136.99.87",
+            "port": "2021",
+            "userName": "cmdi-sh",
+            "password": "cmdi@sh123",
+            "longitude":"121.62545",
+            "latitude":"31.27331"
+        },
+        {
+            "serverName": "云南服务器",
+            "serverAddress": "183.224.8.186",
+            "port": "3321",
+            "userName": "ftphuawei",
+            "password": "TYhcwfc0#2wsx!QAZ",
+            "longitude":"102.71393",
+            "latitude":"25.08626"
+        },
+		{
+            "serverName": "辽宁服务器",
+            "serverAddress": "221.180.151.56",
+            "port": "21",
+            "userName": "liaoning",
+            "password": "liaoningtest140318",
+            "longitude":"123.315833",
+            "latitude":"41.563685"
+        },
+		{
+            "serverName": "贵州服务器",
+            "serverAddress": "218.201.192.178",
+            "port": "21",
+            "userName": "smarttest",
+            "password": "Smart2014",
+            "longitude":"106.684776",
+            "latitude":"26.394196"
+        }
+    ]
+}

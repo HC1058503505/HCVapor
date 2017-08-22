@@ -8,25 +8,44 @@
 
 import Vapor
 import HTTP
-import MySQLProvider
-import MySQLDriver
+import FluentProvider
+import Fluent
 
 final class UserControllerSource: ResourceRepresentable {
-   
+    private static var droplet:Droplet!
+    
     static func addRoutes(drop:Droplet) {
+        droplet = drop
         let group = drop.grouped("user")
-        group.get("login","username",":username","pwd",":password", handler: login)
-        group.post("register","username",":username","pwd",":password", handler: register)
-        
+        group.get("login","username",":username","pwd",":password","avatar",":avatar", handler: login)
+        group.post("register","username",":username","pwd",":password","avatar",":avatar", handler: register)
+        group.get("leaf", handler: indexUser)
+        group.get("file",":filename", handler: userVideo)
     }
-
+    
+    static func userVideo(_ request: Request) throws -> ResponseRepresentable {
+        guard let fileName = request.parameters.wrapped["filename"]?.string else {
+            return Response(status: .badRequest, body: "Failed")
+        }
+        let response = try Response(filePath: droplet.config.publicDir + "Files/\(fileName)")
+        response.headers = [HeaderKey.contentType : "multipart/form-data"]
+        return response
+    }
+    
+    static func indexUser(_ request: Request) throws -> ResponseRepresentable {
+        let user = try User.makeQuery().all()   // 表的字段或对应的值最好不要包含`.` DotKey
+        for us in user {
+            print(us.name)
+        }
+        let userName = user.map{$0.name}
+        return try droplet.view.make("index", ["name" : "SunnyHC","description" : "Leaf","users" : userName])
+    }
     static func login(_ request: Request) -> ResponseRepresentable {
         
         do {
             guard let name = request.parameters.wrapped["username"]?.string ,let pwd = request.parameters.wrapped["password"]?.string else {
                 return Response(status: .badRequest, body: "Failed")
             }
-            
             guard let _ = try User.makeQuery().filter(raw: "name = \"\(name)\" and password = \"\(pwd)\"").first() else {
                 return Response(status: .notFound, body: "not exist or wrong password")
             }
@@ -42,18 +61,18 @@ final class UserControllerSource: ResourceRepresentable {
         
         do {
             
-            guard let name = request.parameters.wrapped["username"]?.string ,let pwd = request.parameters.wrapped["password"]?.string else {
+            guard let name = request.parameters.wrapped["username"]?.string ,let pwd = request.parameters.wrapped["password"]?.string ,let avatar = request.parameters.wrapped["avatar"]?.string else {
                 return Response(status: .badRequest, body: "Failed")
             }
-
-            if let _ = try User.makeQuery().filter("name",name).first() {
+            
+            if let _ = try User.makeQuery().filter(User.nameKey,name).first() {
                 return Response(status: Status(statusCode: 444, reasonPhrase: "Had exists"), body: "Had exists")
             }
             
             let date = Date()
             let number = Int(date.timeIntervalSince1970)
             
-            let user = User(number: number, name: name, password: pwd)
+            let user = User(number: number, name: name, password: pwd, avatar: avatar)
             try user.save()
             
             return Response(status: .ok, body: "Success")
@@ -62,13 +81,13 @@ final class UserControllerSource: ResourceRepresentable {
         }
         
     }
-
+    
     func makeResource() -> Resource<User> {
         return Resource<User>(
             index: index,
             store: create,
             show: show,
-            update: update,     
+            update: update,
             replace: replace,
             destroy: delete,
             clear: clear
